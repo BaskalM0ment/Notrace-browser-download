@@ -40,14 +40,21 @@ h1 {
   margin-bottom: 60px;
 }
 
+.buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .download-btn {
   display: inline-block;
-  padding: 24px 60px;
+  padding: 22px 45px;
   background: #050505;
   border-radius: 999px;
   color: white;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
   transition: 0.2s;
   box-shadow:
     0 0 25px rgba(255,255,255,0.08),
@@ -55,14 +62,14 @@ h1 {
 }
 
 .download-btn:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
   box-shadow:
-    0 0 30px rgba(255,255,255,0.14),
-    0 0 60px rgba(255,255,255,0.06);
+    0 0 35px rgba(255,255,255,0.15),
+    0 0 65px rgba(255,255,255,0.06);
 }
 
 .version {
-  margin-top: 35px;
+  margin-top: 40px;
   color: #8a8a8a;
   font-size: 18px;
 }
@@ -72,19 +79,39 @@ h1 {
 <body>
 
 <div class="container">
+
   <h1>NoTrace Browser</h1>
 
   <div class="subtitle">
     Fast. Private. Clean.
   </div>
 
-  <a class="download-btn" href="NoTraceBrowserSetup.exe" download>
-    Download for Windows
-  </a>
+  <div class="buttons">
+
+    <a class="download-btn"
+       href="downloads/NoTraceBrowserSetup.exe"
+       download>
+       Download for Windows
+    </a>
+
+    <a class="download-btn"
+       href="downloads/NoTraceBrowser.dmg"
+       download>
+       Download for macOS
+    </a>
+
+    <a class="download-btn"
+       href="downloads/NoTraceBrowser.AppImage"
+       download>
+       Download for Linux
+    </a>
+
+  </div>
 
   <div class="version">
     Version 1.0.0
   </div>
+
 </div>
 
 </body>
