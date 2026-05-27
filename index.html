@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download NoTrace Browser</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000000;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoTrace Browser</title>
 
-    .container {
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.15);
-      background: #000000;
-      width: 90%;
-      max-width: 600px;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+body {
+  background: #000000;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    p {
-      font-size: 18px;
-      color: #cccccc;
-      margin-bottom: 30px;
-    }
+.container {
+  text-align: center;
+}
 
-    .download-btn {
-      display: inline-block;
-      padding: 18px 40px;
-      font-size: 20px;
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      box-shadow: 0 0 18px rgba(255,255,255,0.25);
-      transition: 0.3s ease;
-    }
+h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
 
-    .download-btn:hover {
-      box-shadow: 0 0 28px rgba(255,255,255,0.4);
-    }
+.subtitle {
+  font-size: 22px;
+  color: #cfcfcf;
+  margin-bottom: 60px;
+}
 
-    .version {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #777777;
-    }
-  </style>
+.download-btn {
+  display: inline-block;
+  padding: 24px 60px;
+  background: #050505;
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: 0.2s;
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.08),
+    0 0 50px rgba(255,255,255,0.04);
+}
+
+.download-btn:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.14),
+    0 0 60px rgba(255,255,255,0.06);
+}
+
+.version {
+  margin-top: 35px;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>NoTrace Browser</h1>
-    <p>Fast. Private. Clean.</p>
+<div class="container">
+  <h1>NoTrace Browser</h1>
 
-    <!-- Replace href with your real EXE file path -->
-    <a class="download-btn" href="NoTraceBrowserSetup.exe" download>
-      Download for Windows
-    </a>
-
-    <div class="version">
-      Version 1.0.0
-    </div>
+  <div class="subtitle">
+    Fast. Private. Clean.
   </div>
+
+  <a class="download-btn" href="NoTraceBrowserSetup.exe" download>
+    Download for Windows
+  </a>
+
+  <div class="version">
+    Version 1.0.0
+  </div>
+</div>
 
 </body>
 </html>
