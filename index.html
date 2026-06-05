@@ -13,20 +13,10 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at 15% 20%,
-      rgba(255,255,255,0.14),
-      transparent 25%),
-    radial-gradient(circle at 85% 80%,
-      rgba(255,255,255,0.10),
-      transparent 30%),
-    radial-gradient(circle at 50% 50%,
-      rgba(255,255,255,0.05),
-      transparent 50%),
-    #000;
+  background: #ffffff;
 
   font-family: Arial, sans-serif;
-  color: white;
+  color: black;
 
   height: 100vh;
 
@@ -35,6 +25,10 @@ body {
   align-items: center;
 
   overflow: hidden;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
 .container {
@@ -325,6 +319,25 @@ h1 {
   </div>
 
 </div>
+<script>
+const themeToggle = document.getElementById("themeToggle");
+
+let darkMode = false;
+
+themeToggle.addEventListener("click", () => {
+  darkMode = !darkMode;
+
+  if (darkMode) {
+    document.body.style.background = "#000000";
+    document.body.style.color = "white";
+    themeToggle.innerHTML = "☀️";
+  } else {
+    document.body.style.background = "#ffffff";
+    document.body.style.color = "black";
+    themeToggle.innerHTML = "🌙";
+  }
+});
+</script>
 <button id="themeToggle">🌙</button>
 </body>
 </html>
