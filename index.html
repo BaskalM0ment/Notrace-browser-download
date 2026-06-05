@@ -233,6 +233,36 @@ h1 {
   color: rgba(255,255,255,0.45);
 
   font-size: 18px;
+  #themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0);
+
+  color: white;
+  font-size: 22px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
+
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+
+  transition: all .25s ease;
+
+  z-index: 9999;
+}
+
+#themeToggle:hover {
+  transform: scale(1.08);
 }
 </style>
 </head>
@@ -295,6 +325,6 @@ h1 {
   </div>
 
 </div>
-
+<button id="themeToggle">🌙</button>
 </body>
 </html>
