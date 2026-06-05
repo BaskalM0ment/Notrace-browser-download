@@ -14,14 +14,14 @@
 
 body {
   background:
-    radial-gradient(circle at 20% 20%,
-      rgba(255,255,255,0.08),
+    radial-gradient(circle at 15% 20%,
+      rgba(255,255,255,0.14),
+      transparent 25%),
+    radial-gradient(circle at 85% 80%,
+      rgba(255,255,255,0.10),
       transparent 30%),
-    radial-gradient(circle at 80% 80%,
-      rgba(255,255,255,0.06),
-      transparent 35%),
     radial-gradient(circle at 50% 50%,
-      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.05),
       transparent 50%),
     #000;
 
@@ -77,19 +77,14 @@ h1 {
 
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.18),
-      rgba(255,255,255,0.05)
-    );
+  background: rgba(255,255,255,0.05);
 
-  border: 1px solid rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.12);
 
-  backdrop-filter: blur(50px) saturate(180%);
-  -webkit-backdrop-filter: blur(50px) saturate(180%);
+  backdrop-filter: blur(90px) saturate(250%);
+  -webkit-backdrop-filter: blur(90px) saturate(250%);
 
-  color: white;
+  color: rgba(255,255,255,0.96);
   font-size: 28px;
   font-weight: 500;
 
@@ -98,27 +93,23 @@ h1 {
   transition: all .35s ease;
 
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.25),
-    inset 0 -2px 0 rgba(255,255,255,0.04),
-    0 20px 60px rgba(255,255,255,0.08),
-    0 0 80px rgba(255,255,255,0.03);
+    inset 0 1px 0 rgba(255,255,255,0.30),
+    inset 0 -1px 0 rgba(255,255,255,0.03),
+    0 20px 100px rgba(255,255,255,0.04);
 }
 
 .download-trigger:hover {
   transform: scale(1.05);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.24),
-      rgba(255,255,255,0.08)
-    );
+  background: rgba(255,255,255,0.08);
+
+  border-color: rgba(255,255,255,0.22);
 
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.35),
-    0 25px 80px rgba(255,255,255,0.12),
-    0 0 100px rgba(255,255,255,0.05);
+    inset 0 1px 0 rgba(255,255,255,0.40),
+    0 25px 120px rgba(255,255,255,0.08);
 }
+
 
 /* POPUP */
 
@@ -135,17 +126,12 @@ h1 {
 
   border-radius: 34px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.15),
-      rgba(255,255,255,0.05)
-    );
+  background: rgba(255,255,255,0.035);
 
-  border: 1px solid rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.10);
 
-  backdrop-filter: blur(60px) saturate(180%);
-  -webkit-backdrop-filter: blur(60px) saturate(180%);
+  backdrop-filter: blur(120px) saturate(280%);
+  -webkit-backdrop-filter: blur(120px) saturate(280%);
 
   opacity: 0;
   visibility: hidden;
@@ -156,8 +142,8 @@ h1 {
     transform .35s ease;
 
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.25),
-    0 30px 80px rgba(255,255,255,0.08);
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 40px 120px rgba(255,255,255,0.04);
 
   z-index: 999;
 }
@@ -195,17 +181,12 @@ h1 {
 
   border-radius: 22px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.10),
-      rgba(255,255,255,0.04)
-    );
+  background: rgba(255,255,255,0.025);
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter: blur(35px);
-  -webkit-backdrop-filter: blur(35px);
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(70px);
 
   transition: all .25s ease;
 }
@@ -213,18 +194,14 @@ h1 {
 .download-option:hover {
   transform: scale(1.03);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.16),
-      rgba(255,255,255,0.06)
-    );
+  background: rgba(255,255,255,0.06);
 
-  border-color: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.18);
 
   box-shadow:
-    0 10px 40px rgba(255,255,255,0.05);
+    0 10px 50px rgba(255,255,255,0.04);
 }
+
 
 .platform {
   font-size: 22px;
