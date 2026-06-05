@@ -75,27 +75,24 @@ h1 {
   width: 320px;
   height: 95px;
 
-  border-radius: 999px;
+  border-radius: 16px;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.15);
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
 
-  backdrop-filter: blur(90px) saturate(250%);
-  -webkit-backdrop-filter: blur(90px) saturate(250%);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1);
 
-  color: rgba(255,255,255,0.96);
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
+
+  color: white;
   font-size: 28px;
   font-weight: 500;
 
   cursor: pointer;
-
-  transition: all .35s ease;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.30),
-    inset 0 -1px 0 rgba(255,255,255,0.03),
-    0 20px 100px rgba(255,255,255,0.04);
+  transition: all .3s ease;
 }
 
 .download-trigger:hover {
@@ -124,14 +121,17 @@ h1 {
   width: 440px;
   padding: 30px;
 
-  border-radius: 34px;
+  border-radius: 16px;
 
-  background: rgba(255,255,255,0.035);
+  background: rgba(255, 255, 255, 0.15);
 
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
 
-  backdrop-filter: blur(120px) saturate(280%);
-  -webkit-backdrop-filter: blur(120px) saturate(280%);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
 
   opacity: 0;
   visibility: hidden;
@@ -140,10 +140,6 @@ h1 {
   transition:
     opacity .35s ease,
     transform .35s ease;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.22),
-    0 40px 120px rgba(255,255,255,0.04);
 
   z-index: 999;
 }
@@ -170,7 +166,6 @@ h1 {
 
 .download-option {
   display: block;
-
   width: 100%;
 
   text-decoration: none;
@@ -179,14 +174,17 @@ h1 {
   padding: 20px 24px;
   margin-bottom: 18px;
 
-  border-radius: 22px;
+  border-radius: 16px;
 
-  background: rgba(255,255,255,0.025);
+  background: rgba(255, 255, 255, 0.12);
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
 
-  backdrop-filter: blur(70px);
-  -webkit-backdrop-filter: blur(70px);
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
 
   transition: all .25s ease;
 }
