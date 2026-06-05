@@ -75,17 +75,15 @@ h1 {
   width: 320px;
   height: 95px;
 
+  background: rgba(255, 255, 255, 0);
+
   border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
 
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-  border: 1px solid rgba(255,255,255,0.18);
-
-  box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.1);
-
-  backdrop-filter: blur(1.6px);
-  -webkit-backdrop-filter: blur(1.6px);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 
   color: white;
   font-size: 28px;
@@ -93,6 +91,17 @@ h1 {
 
   cursor: pointer;
   transition: all .3s ease;
+}
+
+.download-trigger:hover {
+  transform: scale(1.05);
+
+  background: rgba(255,255,255,0.04);
+
+  border-color: rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.15);
 }
 
 .download-trigger:hover {
@@ -121,17 +130,15 @@ h1 {
   width: 440px;
   padding: 30px;
 
+  background: rgba(255, 255, 255, 0);
+
   border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
 
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-  border: 1px solid rgba(255,255,255,0.18);
-
-  box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.1);
-
-  backdrop-filter: blur(1.6px);
-  -webkit-backdrop-filter: blur(1.6px);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 
   opacity: 0;
   visibility: hidden;
@@ -174,21 +181,30 @@ h1 {
   padding: 20px 24px;
   margin-bottom: 18px;
 
+  background: rgba(255, 255, 255, 0);
+
   border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
 
-  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-  border: 1px solid rgba(255,255,255,0.15);
-
-  box-shadow:
-    0 4px 20px rgba(0,0,0,0.08);
-
-  backdrop-filter: blur(1.6px);
-  -webkit-backdrop-filter: blur(1.6px);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 
   transition: all .25s ease;
 }
 
+.download-option:hover {
+  transform: scale(1.03);
+
+  background: rgba(255,255,255,0.04);
+
+  border-color: rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.15);
+}
+  
 .download-option:hover {
   transform: scale(1.03);
 
