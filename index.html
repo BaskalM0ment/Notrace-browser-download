@@ -6,257 +6,186 @@
 <title>NoTrace Browser</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  background: #ffffff;
-
-  font-family: Arial, sans-serif;
-  color: black;
-
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-  transition:
-    background 0.4s ease,
-    color 0.4s ease;
+body{
+  background:#ffffff;
+  font-family:Arial,sans-serif;
+  color:#111;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  transition:all .4s ease;
 }
 
-.container {
-  text-align: center;
+.container{
+  text-align:center;
 }
 
-h1 {
-  font-size: 72px;
-  margin-bottom: 20px;
-
-  color: rgba(255,255,255,0.98);
-
-  text-shadow:
-    0 0 25px rgba(255,255,255,0.25),
-    0 0 60px rgba(255,255,255,0.08);
+h1{
+  font-size:72px;
+  margin-bottom:20px;
+  color:#111;
 }
 
-.subtitle {
-  font-size: 22px;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 60px;
+.subtitle{
+  font-size:22px;
+  color:#555;
+  margin-bottom:60px;
 }
 
-/* DOWNLOAD AREA */
-
-.download-wrapper {
-  position: relative;
-  display: inline-block;
+.download-wrapper{
+  position:relative;
+  display:inline-block;
 }
 
-/* DOWNLOAD BUTTON */
+.download-trigger{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-.download-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width:320px;
+  height:95px;
 
-  width: 320px;
-  height: 95px;
+  background:rgba(255,255,255,0);
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.1);
 
-  background: rgba(255, 255, 255, 0);
+  box-shadow:0 4px 30px rgba(0,0,0,0.1);
 
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(2.3px);
+  -webkit-backdrop-filter:blur(2.3px);
 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color:#111;
+  font-size:28px;
+  cursor:pointer;
 
-  backdrop-filter: blur(2.3px);
-  -webkit-backdrop-filter: blur(2.3px);
-
-  color: white;
-  font-size: 28px;
-  font-weight: 500;
-
-  cursor: pointer;
-  transition: all .3s ease;
+  transition:.3s;
 }
 
-.download-trigger:hover {
-  transform: scale(1.05);
-
-  background: rgba(255,255,255,0.04);
-
-  border-color: rgba(255,255,255,0.25);
-
-  box-shadow:
-    0 8px 40px rgba(0,0,0,0.15);
+.download-trigger:hover{
+  transform:scale(1.05);
 }
 
-.download-trigger:hover {
-  transform: scale(1.05);
+.popup{
+  position:absolute;
+  top:50%;
+  left:calc(100% + 15px);
 
-  background: rgba(255,255,255,0.08);
+  transform:translateY(-50%) translateX(-10px);
 
-  border-color: rgba(255,255,255,0.22);
+  width:440px;
+  padding:30px;
 
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.40),
-    0 25px 120px rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0);
+
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.1);
+
+  box-shadow:0 4px 30px rgba(0,0,0,0.1);
+
+  backdrop-filter:blur(2.3px);
+  -webkit-backdrop-filter:blur(2.3px);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:.35s;
+
+  z-index:999;
 }
-
-
-/* POPUP */
-
-.popup {
-  position: absolute;
-
-  top: 50%;
-  left: calc(100% + 15px);
-
-  transform: translateY(-50%) translateX(-10px);
-
-  width: 440px;
-  padding: 30px;
-
-  background: rgba(255, 255, 255, 0);
-
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.15);
-
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-  backdrop-filter: blur(2.3px);
-  -webkit-backdrop-filter: blur(2.3px);
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transition:
-    opacity .35s ease,
-    transform .35s ease;
-
-  z-index: 999;
-}
-
-/* KEEP OPEN */
 
 .download-wrapper:hover .popup,
-.popup:hover {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.popup:hover{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
 
-  transform: translateY(-50%) translateX(0);
+  transform:translateY(-50%) translateX(0);
 }
 
-.popup-title {
-  font-size: 30px;
-  margin-bottom: 24px;
-
-  color: rgba(255,255,255,0.95);
+.popup-title{
+  font-size:30px;
+  margin-bottom:24px;
+  color:#111;
 }
 
-/* DOWNLOAD OPTIONS */
+.download-option{
+  display:block;
+  width:100%;
 
-.download-option {
-  display: block;
-  width: 100%;
+  text-decoration:none;
+  color:#111;
 
-  text-decoration: none;
-  color: white;
+  padding:20px 24px;
+  margin-bottom:18px;
 
-  padding: 20px 24px;
-  margin-bottom: 18px;
+  background:rgba(255,255,255,0);
 
-  background: rgba(255, 255, 255, 0);
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.1);
 
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:0 4px 30px rgba(0,0,0,0.1);
 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter:blur(2.3px);
+  -webkit-backdrop-filter:blur(2.3px);
 
-  backdrop-filter: blur(2.3px);
-  -webkit-backdrop-filter: blur(2.3px);
-
-  transition: all .25s ease;
+  transition:.25s;
 }
 
-.download-option:hover {
-  transform: scale(1.03);
-
-  background: rgba(255,255,255,0.04);
-
-  border-color: rgba(255,255,255,0.18);
-
-  box-shadow:
-    0 8px 40px rgba(0,0,0,0.15);
-}
-  
-.download-option:hover {
-  transform: scale(1.03);
-
-  background: rgba(255,255,255,0.06);
-
-  border-color: rgba(255,255,255,0.18);
-
-  box-shadow:
-    0 10px 50px rgba(255,255,255,0.04);
+.download-option:hover{
+  transform:scale(1.03);
 }
 
-
-.platform {
-  font-size: 22px;
-  margin-bottom: 6px;
+.platform{
+  font-size:22px;
+  margin-bottom:6px;
 }
 
-.filetype {
-  color: rgba(255,255,255,0.6);
-  font-size: 15px;
+.filetype{
+  color:#666;
+  font-size:15px;
 }
 
-.version {
-  margin-top: 40px;
-
-  color: rgba(255,255,255,0.45);
-
-  font-size: 18px;
-  #themeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-
-  width: 55px;
-  height: 55px;
-
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0);
-
-  color: white;
-  font-size: 22px;
-
-  cursor: pointer;
-
-  backdrop-filter: blur(2.3px);
-  -webkit-backdrop-filter: blur(2.3px);
-
-  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-
-  transition: all .25s ease;
-
-  z-index: 9999;
+.version{
+  margin-top:40px;
+  color:#666;
+  font-size:18px;
 }
 
-#themeToggle:hover {
-  transform: scale(1.08);
+#themeToggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+
+  width:55px;
+  height:55px;
+
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.1);
+
+  background:rgba(255,255,255,0);
+
+  backdrop-filter:blur(2.3px);
+  -webkit-backdrop-filter:blur(2.3px);
+
+  box-shadow:0 4px 30px rgba(0,0,0,0.1);
+
+  cursor:pointer;
+  font-size:22px;
+
+  transition:.25s;
+}
+
+#themeToggle:hover{
+  transform:scale(1.08);
 }
 </style>
 </head>
@@ -283,29 +212,17 @@ h1 {
         Download NoTrace
       </div>
 
-      <a
-        class="download-option"
-        href="./downloads/NoTraceBrowserSetup.exe"
-        download
-      >
+      <a class="download-option" href="./downloads/NoTraceBrowserSetup.exe" download>
         <div class="platform">Windows</div>
         <div class="filetype">.exe installer</div>
       </a>
 
-      <a
-        class="download-option"
-        href="./downloads/NoTraceBrowser.dmg"
-        download
-      >
+      <a class="download-option" href="./downloads/NoTraceBrowser.dmg" download>
         <div class="platform">macOS</div>
         <div class="filetype">.dmg package</div>
       </a>
 
-      <a
-        class="download-option"
-        href="./downloads/NoTraceBrowser.AppImage"
-        download
-      >
+      <a class="download-option" href="./downloads/NoTraceBrowser.AppImage" download>
         <div class="platform">Linux</div>
         <div class="filetype">.AppImage</div>
       </a>
@@ -319,25 +236,55 @@ h1 {
   </div>
 
 </div>
+
+<button id="themeToggle">🌙</button>
+
 <script>
 const themeToggle = document.getElementById("themeToggle");
-
 let darkMode = false;
 
 themeToggle.addEventListener("click", () => {
   darkMode = !darkMode;
 
   if (darkMode) {
-    document.body.style.background = "#000000";
-    document.body.style.color = "white";
+    document.body.style.background = "#000";
+    document.body.style.color = "#fff";
+
+    document.querySelector("h1").style.color = "#fff";
+    document.querySelector(".subtitle").style.color = "#bbb";
+    document.querySelector(".version").style.color = "#888";
+
+    document.querySelector(".popup-title").style.color = "#fff";
+
+    document.querySelectorAll(".download-option").forEach(el => {
+      el.style.color = "#fff";
+    });
+
+    document.querySelector(".download-trigger").style.color = "#fff";
+
     themeToggle.innerHTML = "☀️";
+    themeToggle.style.color = "#fff";
   } else {
-    document.body.style.background = "#ffffff";
-    document.body.style.color = "black";
+    document.body.style.background = "#fff";
+    document.body.style.color = "#111";
+
+    document.querySelector("h1").style.color = "#111";
+    document.querySelector(".subtitle").style.color = "#555";
+    document.querySelector(".version").style.color = "#666";
+
+    document.querySelector(".popup-title").style.color = "#111";
+
+    document.querySelectorAll(".download-option").forEach(el => {
+      el.style.color = "#111";
+    });
+
+    document.querySelector(".download-trigger").style.color = "#111";
+
     themeToggle.innerHTML = "🌙";
+    themeToggle.style.color = "#111";
   }
 });
 </script>
-<button id="themeToggle">🌙</button>
+
 </body>
 </html>
